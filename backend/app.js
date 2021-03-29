@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const mongoDBURI = require('./config.json');
 
 const postsRoutes = require('./routes/posts');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://marin:Marin9004@cluster0.eiv23.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect(mongoDBURI.DBURI)
     .then(() => {
         console.log('Connected to database!');
     })
