@@ -1,12 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const mongoDBURI = require('./config.json');
+const config = require('./config.json');
 
 const postsRoutes = require('./routes/posts');
 
 const app = express();
 
-mongoose.connect(mongoDBURI.DBURI)
+mongoose.connect(config.DBURI)
     .then(() => {
         console.log('Connected to database!');
     })
