@@ -7,7 +7,7 @@ const postsRoutes = require('./routes/posts');
 
 const app = express();
 
-mongoose.connect(config.DBURI)
+mongoose.connect(config.DBURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log('Connected to database!');
     })
